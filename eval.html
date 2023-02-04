@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eval.css">
+    <title>Evaluation DOM</title>
+</head>
+<body>
+
+    <h2> Evaluation BeWeb - Manipulation du DOM</h2>
+    <button id="on_off" onclick="collapse()"> Ouvrir / Fermer </button>
+    <main>
+<!--  -->
+        <nav id="tab_nav" class="tab">
+            <button class="tab_links" onclick="open_module(event, 'module1')">Module 1</button>
+            <button class="tab_links" onclick="open_module(event, 'module2')">Module 2</button>
+            <button class="tab_links" onclick="open_module(event, 'module3')">Module 3</button>
+            <button class="tab_links" onclick="open_module(event, 'module4')">Module 4</button>
+            <button class="tab_links" onclick="open_module(event, 'module5')">Module 5</button>
+        </nav>
+<!--  -->
+        <section id="module1" class="tab_content">
+            <h4> Liens pour voir la trilogie <br> 'The Godfather'</h4>
+            <div id="container"></div>
+            <img id="picture1" style="display:none;" src="img/godfather1.jpg"/>
+            <img id="picture2" style="display:none;" src="img/godfather2.jpg"/>
+            <img id="picture3" style="display:none;" src="img/godfather3.jpg"/>
+        </section>
+<!--  -->
+        <form id="module2" class="tab_content">
+            <h4> Tableau de coordonnées</h4>
+            <input for="firstname" id="firstname" type="text" placeholder="Saisir le prénom">
+            <input for="lastname" id="lastname" type="text" placeholder="Et le nom de famille "> 
+            <input type="button" id="go" value="Valider"></input>
+            <div id="identity"></div>
+        </form>
+<!--  -->
+        <section id="module3" class="tab_content">
+            <h4> Changer de style</h4>
+            <p>Veuillez ouvrir le menu déroulant pour choisir le style que vous souhaitez donner au paragraphe ci dessous</p>
+            <select>
+                <option onclick="change_style1('target_text')">Fantasy</option>
+                <option onclick="change_style2('target_text')">Cursive</option>
+                <option onclick="change_style3('target_text')">Monospace</option>
+            </select>
+            <p id="target_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum consequatur laudantium, cumque omnis quasi, dolorem corporis cum debitis quae eum cupiditate, perferendis sit vitae! Quos animi blanditiis rem labore vero.</p>
+        </section>
+<!--  -->
+        <section id="module4" class="tab_content">
+            <h4>Liste ordonnée</h4>
+            <p>Ci dessous une liste avec la fonction pour choisir l'ordre: </p>
+            <button id="ascending">Croissant</button>
+            <button id="descending">Décroissant</button>    
+            <ul id="chest">        
+                <li id="one"> Valeur 1 </li>        
+                <li id="two"> Valeur 2 </li>        
+                <li id="three"> Valeur 3 </li>        
+                <li id="four"> Valeur 4 </li>
+            </ul>
+        </section>
+<!--  -->
+        <section id="module5" class="tab_content">
+            <h4>Module 5</h4>
+            <p>Si on voit ce paragraphe ca veut dire que ca fonctionne</p>
+        </section>
+    </main>
+<!--  -->
+    <script src="tab_nav.js"></script>
+    <script src="module1.js"></script>
+    <script src="module2.js"></script>
+    <script src="module3.js"></script>
+    <script src="module4.js"></script>
+    <script src="module5.js"></script>
+<!--  -->
+</body>
+</html>
