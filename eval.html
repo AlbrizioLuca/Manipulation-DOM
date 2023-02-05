@@ -34,19 +34,19 @@
             <input for="firstname" id="firstname" type="text" placeholder="Saisir le prénom">
             <input for="lastname" id="lastname" type="text" placeholder="Et le nom de famille "> 
             <input type="button" id="go" value="Valider"></input>
-            <div id="identity"></div>
+            <div id="table_identity"></div>
         </form>
 <!--  -->
         <section id="module3" class="tab_content">
             <h4> Changer de style</h4>
             <p>Veuillez ouvrir le menu déroulant pour choisir le style que vous souhaitez donner au paragraphe ci dessous</p>
             <select>
-                <option onclick="change_style1('target_text')">Fantasy</option>
-                <option onclick="change_style2('target_text')">Cursive</option>
-                <option onclick="change_style3('target_text')">Monospace</option>
+                <option onclick="change_style1('target_text')">Fantasy</option> ;
+                <option onclick="change_style2('target_text')">Cursive</option> ;
+                <option onclick="change_style3('target_text')">Monospace</option> ;
             </select>
             <p id="target_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum consequatur laudantium, cumque omnis quasi, dolorem corporis cum debitis quae eum cupiditate, perferendis sit vitae! Quos animi blanditiis rem labore vero.</p>
-        </section>
+        </section>        
 <!--  -->
         <section id="module4" class="tab_content">
             <h4>Liste ordonnée</h4>
@@ -62,8 +62,32 @@
         </section>
 <!--  -->
         <section id="module5" class="tab_content">
-            <h4>Module 5</h4>
-            <p>Si on voit ce paragraphe ca veut dire que ca fonctionne</p>
+            <h4>Faites votre choix </h4> 
+            <p>Cocher les ingrédients souhaités dans votre Burger: </p>
+            <div id="choices">
+                <input type="checkbox" value="salade" name="salade" class="add">
+                <label for="salade">Salade</label>
+<!--  -->
+                <input type="checkbox" value="tomate" name="tomate" class="add">
+                <label for="tomate">Tomate</label>
+<!--  -->
+                <input type="checkbox" value="oignons frits" name="oignons_frits" class="add">
+                <label for="oignons_frits">Oignons frits</label>
+<!--  -->
+                <input type="checkbox" value="pickles" name="pickles" class="add">
+                <label for=pickles">Pickles</label>
+<!--  -->
+                <input type="checkbox" value="bacon" name="bacon" class="add">
+                <label for="bacon">Bacon</label>
+            </div>
+            <p>Vous consommerez :</p>
+            <input type="radio" name="choice" id="choice1">sur place
+            <input type="radio" name="choice" id="choice2">à emporter
+            <br>
+            <input type="button" id="validation" value="Valider"></input>
+<!--  -->
+            <div id="result_one"></div>
+            <div id="result_two"></div>
         </section>
     </main>
 <!--  -->

@@ -1,3 +1,4 @@
+// 3 fonctions différentes qui sont appelées lors du click sur le menu select
 function change_style1(target_text) {
     document.getElementById(target_text).style.fontFamily="fantasy";   
     document.getElementById(target_text).style.textAlign="left"; 
