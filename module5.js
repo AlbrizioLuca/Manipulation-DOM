@@ -1,15 +1,22 @@
-// Récupérer tous les éléments de la checkbox via leur class commune, et les mettre dans un tableau
+// Récupére tous les éléments de la checkbox via leur class commune, et les mettre dans un tableau
 let additionals = document.getElementsByClassName("add");
 // Crée un tableau vide dans lequel on ajoutera tous les éléments checked
 let choices_defined = [];
 // Boucle sur tous les éléments de la checkbox
 for (let i = 0; i < additionals.length; i++) {
-    // Définit chaque index du tableau comme un élément
     additionals[i].addEventListener("click", function() {
-        this.setAttribute("checked", "checked");
-        choices_defined.push(this.value);
-        console.log("supplément", choices_defined);
-
+        // Si cet élément est déjà checked alors il fait déjà partie du tableau 
+        if (choices_defined.includes(this.value)) {
+            // Dans ce cas on le retrouve avec son index
+            let index = choices_defined.indexOf(this.value);
+            // et on le supprime pour éviter des doublons
+            choices_defined.splice(index, 1);
+            this.removeAttribute("checked");
+            // sinon on le rajoute au tableau et on push sa valeur
+        } else {
+            this.setAttribute("checked", "checked");
+            choices_defined.push(this.value);
+        }
     });
 }
 

@@ -31,8 +31,8 @@
 <!--  -->
         <form id="module2" class="tab_content">
             <h4> Tableau de coordonnées</h4>
-            <input for="firstname" id="firstname" type="text" placeholder="Saisir le prénom">
-            <input for="lastname" id="lastname" type="text" placeholder="Et le nom de famille "> 
+            <input for="firstname" id="firstname" type="text" placeholder="Saisir le prénom" type="text" pattern="[A-Za-z]+" title="Veuillez entrer uniquement des lettres."">
+            <input for="lastname" id="lastname" type="text" placeholder="Et le nom de famille " type="text" pattern="[A-Za-z]+" title="Veuillez entrer uniquement des lettres.""> 
             <input type="button" id="go" value="Valider"></input>
             <div id="table_identity"></div>
         </form>
@@ -40,10 +40,11 @@
         <section id="module3" class="tab_content">
             <h4> Changer de style</h4>
             <p>Veuillez ouvrir le menu déroulant pour choisir le style que vous souhaitez donner au paragraphe ci dessous</p>
-            <select>
-                <option onclick="change_style1('target_text')">Fantasy</option> ;
-                <option onclick="change_style2('target_text')">Cursive</option> ;
-                <option onclick="change_style3('target_text')">Monospace</option> ;
+            <select onchange="change_style(this.value)">
+                <option>Aucun style</option>
+                <option value="style1">Fantasy</option>
+                <option value="style2">Cursive</option>
+                <option value="style3">Monospace</option> 
             </select>
             <p id="target_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum consequatur laudantium, cumque omnis quasi, dolorem corporis cum debitis quae eum cupiditate, perferendis sit vitae! Quos animi blanditiis rem labore vero.</p>
         </section>        

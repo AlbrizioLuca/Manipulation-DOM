@@ -1,18 +1,31 @@
-// 3 fonctions différentes qui sont appelées lors du click sur le menu select
-function change_style1(target_text) {
-    document.getElementById(target_text).style.fontFamily="fantasy";   
-    document.getElementById(target_text).style.textAlign="left"; 
-    document.getElementById(target_text).style.fontStyle="normal";
-}
+// lors du changement dans le menu select, la fonction s'active et changera le style du paragraphe ciblé par son id 
+document.getElementById("target_text").onchange = function() {change_style()};
 
-function change_style2(target_text) {
-    document.getElementById(target_text).style.fontFamily="cursive";
-    document.getElementById(target_text).style.textAlign="center";
-    document.getElementById(target_text).style.fontStyle="italic";
-}
-
-function change_style3(target_text) {
-    document.getElementById(target_text).style.fontFamily="monospace";
-    document.getElementById(target_text).style.textAlign="right";
-    document.getElementById(target_text).style.fontStyle="normal";
-}
+function change_style(style) {
+    // Cible le paragraphe par son id
+    let target = document.getElementById("target_text");
+    // si deuxieme option choisie
+        if (style === "style1") {
+            target.style.fontFamily="fantasy";   
+            target.style.textAlign="center"; 
+            target.style.fontStyle="normal";
+        } 
+    // si troisieme option choisie
+        else if (style === "style2") {
+            target.style.fontFamily="cursive";   
+            target.style.textAlign="left"; 
+            target.style.fontStyle="italic";
+        }
+    // si quatrieme option choisie
+        else if (style === "style3") {
+            target.style.fontFamily="monospace";   
+            target.style.textAlign="right"; 
+            target.style.fontStyle="normal";
+        }
+    // sinon on reste à la premiere option soit aucun style
+        else {
+            target.style.fontFamily="";   
+            target.style.textAlign=""; 
+            target.style.fontStyle="";
+        }
+    };

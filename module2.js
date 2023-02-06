@@ -42,7 +42,6 @@ function table_result(){
 // Appel de la fonction pour qu'il soit visible au chargement de la page
 table_result();
 
-
 // Récupère les valeurs des inputs prenoms et nom de famille et les formatte pour retourner les valeurs sous forme de JSON
 function inputs_to_JSON() {
     let prenom = document.getElementById("firstname").value;       
